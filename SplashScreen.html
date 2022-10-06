@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>splashscreen</title>
+</head>
+<body id="splash_screen_body">
+<div id="splash_screen_container">
+    <h1 id="title" class="text-with-shadow text-design">UTOPA</h1>
+    <img src="/assets/img/pacman-open-mouth.svg" id="pacman" alt="pacman"/>
+    <ul id="ghosts">
+        <li class="ghost">
+            <img src="/assets/img/ghost-red.svg" class="ghost-img" alt="ghost-red"/>
+        </li>
+        <li class="ghost">
+            <img src="/assets/img/ghost-blue.svg" class="ghost-img" alt="ghost-blue"/>
+        </li>
+        <li class="ghost">
+            <img src="/assets/img/ghost-purple.svg" class="ghost-img" alt="ghost-purple"/>
+        </li>
+        <li class="ghost">
+            <img src="/assets/img/ghost-orange.svg" class="ghost-img" alt="ghost-orange"/>
+        </li>
+    </ul>
+</div>
+</body>
+<style>
+
+    .text-with-shadow {
+        text-shadow: 0 0 2px rgb(255, 204, 0),
+        0 1px 0 rgb(236, 190, 3),
+        0 2px 0 rgb(217, 175, 6),
+        0 3px 0 rgb(198, 161, 10),
+        0 4px 0 rgb(179, 147, 13),
+        0 5px 0 rgb(160, 132, 16),
+        0 6px 0 rgb(142, 118, 19),
+        0 7px 0 rgb(123, 104, 22),
+        0 8px 0 rgb(104, 89, 25),
+        0 9px 0 rgb(85, 75, 29),
+        0 10px 0 rgb(66, 61, 32),
+        0 11px 10px rgb(47, 46, 35),
+        0 0 10px rgba(28, 32, 38, .2);
+    }
+
+    .text-design {
+        color: #1C2026;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+        transform-style: preserve-3d;
+    }
+
+    #splash_screen_body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: transparent;
+    }
+
+    #splash_screen_container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    #title {
+        margin: 0;
+        font-size: 50px;
+        color: black;
+        font-family: "Roboto Light", sans-serif;
+    }
+
+    #pacman {
+        padding: 0 10px 0 0;
+        width: 50px;
+        height: 50px;
+        animation: pacman-eating .3s infinite;
+    }
+
+    #ghosts {
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .ghost {
+        list-style: none;
+        padding: 0 10px;
+        animation: floating-ghost 1.6s infinite;
+    }
+
+    .ghost-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ghost:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .ghost:nth-child(2) {
+        animation-delay: .4s;
+    }
+
+    .ghost:nth-child(3) {
+        animation-delay: .8s;
+    }
+
+    .ghost:nth-child(4) {
+        animation-delay: 1.2s;
+    }
+
+    @keyframes floating-ghost {
+        0% {
+            transform: translateY(0);
+        }
+        20% {
+            transform: translateY(-10px);
+        }
+        40% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pacman-eating {
+        0% {
+            content: url("/assets/img/pacman-close-mouth.svg");
+        }
+        100% {
+            content: url("/assets/img/pacman-open-mouth.svg");
+        }
+    }
+
+</style>
+</html>
